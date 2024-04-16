@@ -118,7 +118,7 @@ class BankAccount {
       }
       if(amount + this.transaction_limit > 10000 && today){
         let available_amount = 10000 - this.transaction_limit;
-        throw Error('You cant transfer ' + amount +" available amount to transfer is "+ available_amount)
+        throw Error('You can\'t transfer ' + amount +" available amount to transfer is "+ available_amount)
       }
       if (amount > this._balance) {
         throw new Error('Insufficient funds');
@@ -147,10 +147,11 @@ class BankAccount {
 }
 const newAccount = new BankAccount() // create 1st account
 
-newAccount.setAccountHolder("Caleb","john") //set the account holder ,name and last name
+newAccount.setAccountHolder("Oja","Daddy") //set the account holder ,name and last name
+console.log(newAccount)
 newAccount.deposit(2000)//deposit 2000 to users account
 newAccount.deposit(3000)//deposit 3000 to users account
-newAccount.withdraw(2500) //withdraw 900 from users account
+newAccount.withdraw(2500) //withdraw 2500 from users account
 console.log(newAccount.getTransactions()); 
 
 const new_transfer_account =  new BankAccount()
